@@ -1,3 +1,3 @@
 import Policy from "./Policy";
 
-export { Policy };
+export default Policy;

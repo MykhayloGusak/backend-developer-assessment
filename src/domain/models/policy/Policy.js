@@ -1,9 +1,9 @@
 import { attributes } from "structure";
 
-const Policy = attributes({
+var Policy = attributes({
 	id: String,
 	amountInsured: Number,
-	email: String,
+	email: Boolean,
 	inceptionDate: Date,
 	installmentPayment: Boolean,
 	clientId: String

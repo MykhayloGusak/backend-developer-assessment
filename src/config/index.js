@@ -21,4 +21,4 @@ const config = {
 	POLICIES: policies
 };
 
-export { config, secretString };
+export { config };

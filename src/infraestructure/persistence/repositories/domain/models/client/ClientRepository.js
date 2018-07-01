@@ -1,9 +1,6 @@
 import axios from "axios";
 
 class ClientRepository {
-	constructor({ config }) {
-		this.config = config;
-	}
 	async getAllClients() {
 		try {
 			const response = await axios.get(
@@ -17,4 +14,4 @@ class ClientRepository {
 	}
 }
 
-export default new ClientRepository();
+export default ClientRepository;
