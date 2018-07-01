@@ -24,4 +24,4 @@ const config = {
 	POLICIES: policies
 };
 
-export { config, clients, policies, secretString };
+export { config, secretString };

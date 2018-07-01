@@ -4,6 +4,9 @@
   "description": "Assessment skill backend developer",
   "main": "index.js",
   "scripts": {
+    "start": "cross-env NODE_ENV=production NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 nodemon --exec babel-node index.js",
+    "dev": "cross-env NODE_ENV=development NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 nodemon --exec babel-node index.js",
+    "babel-node": "babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -46,6 +49,7 @@
     "babel-plugin-transform-es2015-typeof-symbol": "^6.23.0",
     "babel-plugin-transform-es2015-unicode-regex": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.2.0",
     "eslint": "^5.0.1",
     "jest": "^23.2.0",
     "nodemon": "^1.17.5",
@@ -56,6 +60,7 @@
     "awilix": "^3.0.8",
     "awilix-express": "^1.1.0",
     "axios": "^0.18.0",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "lodash": "^4.17.10"
