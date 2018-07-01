@@ -46,7 +46,9 @@
     "babel-plugin-transform-es2015-typeof-symbol": "^6.23.0",
     "babel-plugin-transform-es2015-unicode-regex": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "nodemon": "^1.17.5"
+    "jest": "^23.2.0",
+    "nodemon": "^1.17.5",
+    "supertest": "^3.1.0"
   },
   "dependencies": {
     "axios": "^0.18.0",
