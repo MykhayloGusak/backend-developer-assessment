@@ -47,5 +47,9 @@
     "babel-plugin-transform-es2015-unicode-regex": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
   }
 }
