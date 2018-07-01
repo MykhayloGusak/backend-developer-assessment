@@ -6,7 +6,7 @@ require("babel-register")({
 const container = require("./container");
 
 const server = container.resolve("server");
-const policies = container.resolve("policyRepository");
+const clients = container.resolve("clientRepository");
 
-policies.getAll();
+clients.getAll();
 server.start();

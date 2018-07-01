@@ -8,7 +8,8 @@ import { config } from "./config/index";
 //Class, Functions and Values of system
 import Server from "./ui/api-rest/index";
 import expressApp from "./ui/api-rest/express";
-import { PolicyRepository } from "./infraestructure/persistence/repositories/domain/models/policy/";
+import PolicyRepository from "./infraestructure/persistence/repositories/domain/models/policy/";
+import ClientRepository from "./infraestructure/persistence/repositories/domain/models/client/";
 //Class, Functions and Values of Middleware
 
 const container = createContainer();
@@ -20,6 +21,9 @@ container
 	})
 	.register({
 		policyRepository: asClass(PolicyRepository).singleton()
+	})
+	.register({
+		clientRepository: asClass(ClientRepository).singleton()
 	})
 	// System Functions
 	.register({

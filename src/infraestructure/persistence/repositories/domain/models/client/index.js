@@ -1,3 +1,3 @@
 import ClientRepository from "./ClientRepository";
 
-export { ClientRepository };
+export default ClientRepository;

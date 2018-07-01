@@ -1,3 +1,3 @@
 import PolicyRepository from "./PolicyRepository";
 
-export { PolicyRepository };
+export default PolicyRepository;
