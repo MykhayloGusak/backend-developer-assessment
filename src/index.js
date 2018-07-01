@@ -8,5 +8,5 @@ const container = require("./container");
 const server = container.resolve("server");
 const client = container.resolve("ClientAggregate");
 
-client.getAll();
+client.getById("e8fd159b-57c4-4d36-9bd7-a59ca13057bb");
 server.start();

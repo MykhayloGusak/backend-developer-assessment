@@ -22,7 +22,6 @@ class ClientRepository {
 				});
 				clients.push(client.toJSON());
 			});
-			console.log(clients);
 			return clients;
 		} catch (error) {
 			console.error(error);
