@@ -5,6 +5,15 @@ class ClientAggregate {
 		this.ClientRepository = ClientRepository;
 	}
 
+	async getAll() {
+		try {
+			const clients = await this.ClientRepository.getAll();
+			return clients;
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
 	async getByUsername(name) {
 		try {
 			const clients = await this.ClientRepository.getAll();

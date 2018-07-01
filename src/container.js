@@ -11,6 +11,7 @@ import expressApp from "./ui/api-rest/express";
 import PolicyRepository from "./infraestructure/persistence/repositories/domain/models/policy/";
 import ClientRepository from "./infraestructure/persistence/repositories/domain/models/client/";
 import ClientAggregate from "./domain/aggregates/client/";
+import PolicyAggregate from "./domain/aggregates/policy/";
 //Class, Functions and Values of Middleware
 
 const container = createContainer();
@@ -28,6 +29,9 @@ container
 	})
 	.register({
 		ClientAggregate: asClass(ClientAggregate).singleton()
+	})
+	.register({
+		PolicyAggregate: asClass(PolicyAggregate).singleton()
 	})
 	// System Functions
 	.register({

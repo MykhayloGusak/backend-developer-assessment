@@ -6,7 +6,7 @@ require("babel-register")({
 const container = require("./container");
 
 const server = container.resolve("server");
-const client = container.resolve("ClientAggregate");
+const client = container.resolve("PolicyAggregate");
 
-client.getById("e8fd159b-57c4-4d36-9bd7-a59ca13057bb");
+client.getByClientId("a0ece5db-cd14-4f21-812f-966633e7be86");
 server.start();
