@@ -10,6 +10,7 @@ import Server from "./ui/api-rest/index";
 import expressApp from "./ui/api-rest/express";
 import PolicyRepository from "./infraestructure/persistence/repositories/domain/models/policy/";
 import ClientRepository from "./infraestructure/persistence/repositories/domain/models/client/";
+import ClientAggregate from "./domain/aggregates/client/";
 //Class, Functions and Values of Middleware
 
 const container = createContainer();
@@ -20,10 +21,13 @@ container
 		server: asClass(Server).singleton()
 	})
 	.register({
-		policyRepository: asClass(PolicyRepository).singleton()
+		PolicyRepository: asClass(PolicyRepository).singleton()
 	})
 	.register({
-		clientRepository: asClass(ClientRepository).singleton()
+		ClientRepository: asClass(ClientRepository).singleton()
+	})
+	.register({
+		ClientAggregate: asClass(ClientAggregate).singleton()
 	})
 	// System Functions
 	.register({

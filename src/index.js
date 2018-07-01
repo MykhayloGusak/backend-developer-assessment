@@ -6,7 +6,7 @@ require("babel-register")({
 const container = require("./container");
 
 const server = container.resolve("server");
-const clients = container.resolve("clientRepository");
+const client = container.resolve("ClientAggregate");
 
-clients.getAll();
+client.getAll();
 server.start();
