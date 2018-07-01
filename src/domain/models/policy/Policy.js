@@ -7,6 +7,6 @@ const Policy = attributes({
 	inceptionDate: Date,
 	installmentPayment: Boolean,
 	clientId: String
-})(class User {});
+})(class Policy {});
 
 export default Policy;
