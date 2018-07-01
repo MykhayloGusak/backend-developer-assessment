@@ -3,7 +3,7 @@ require("babel-register")({
 	presets: ["stage-0"]
 });
 
-const container = require("container");
+const container = require("./container");
 
 const server = container.resolve("server");
 

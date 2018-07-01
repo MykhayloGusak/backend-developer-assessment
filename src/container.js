@@ -1,5 +1,5 @@
 //Libraries for the creation of a container for the investment of dependencies
-import { createContainer, Lifetime } from "awilix";
+import { createContainer, asClass, asFunction, asValue } from "awilix";
 import { scopePerRequest } from "awilix-express";
 
 //Values of the system configuration
@@ -13,16 +13,18 @@ import expressApp from "./ui/api-rest/express";
 
 const container = createContainer();
 
-// System
+// System Class
 container
-	.registerClass({
-		server: [Server, { lifetime: Lifetime.SINGLETON }]
+	.register({
+		server: asClass(Server).singleton()
 	})
-	.registerFunction({
-		expressApp: [expressApp, { lifetime: Lifetime.SINGLETON }]
+	// System Functions
+	.register({
+		expressApp: asFunction(expressApp).singleton()
 	})
-	.registerValue({
-		config
+	// System Values
+	.register({
+		config: asValue(config)
 	});
 
 module.exports = container;

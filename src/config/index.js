@@ -1,7 +1,5 @@
 const path = require("path");
-
 const ENV = process.env.NODE_ENV || "development";
-
 const envConfig = require(path.join(__dirname, "environments", ENV));
 
 //Database configuration
@@ -19,7 +17,6 @@ const config = {
 	ENV: ENV,
 	PORT: port,
 	SECRETSTRING: secretString,
-	LOGGING: logging,
 	CLIENTS: clients,
 	POLICIES: policies
 };

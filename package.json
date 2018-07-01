@@ -4,10 +4,8 @@
   "description": "Assessment skill backend developer",
   "main": "index.js",
   "scripts": {
-    "start":
-      "cross-env NODE_ENV=production NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 nodemon --exec babel-node src/index.js",
-    "dev":
-      "cross-env NODE_ENV=development NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 nodemon --exec babel-node src/index.js",
+    "start": "cross-env NODE_ENV=production NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 nodemon --exec babel-node src/index.js",
+    "dev": "cross-env NODE_ENV=development NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 nodemon --exec babel-node src/index.js",
     "babel-node": "babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/zergote/backend-developer-assessment.git"
   },
-  "keywords": ["api", "rest", "ddd", "onion", "architecture"],
+  "keywords": [
+    "api",
+    "rest",
+    "ddd",
+    "onion",
+    "architecture"
+  ],
   "author": "Christian Yánez",
   "license": "MIT",
   "bugs": {
@@ -36,6 +40,7 @@
     "babel-plugin-transform-es2015-for-of": "^6.23.0",
     "babel-plugin-transform-es2015-function-name": "^6.24.1",
     "babel-plugin-transform-es2015-literals": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-es2015-object-super": "^6.24.1",
     "babel-plugin-transform-es2015-parameters": "^6.24.1",
     "babel-plugin-transform-es2015-shorthand-properties": "^6.24.1",
@@ -62,7 +67,9 @@
     "lodash": "^4.17.10"
   },
   "babel": {
-    "presets": ["stage-0"],
+    "presets": [
+      "stage-0"
+    ],
     "plugins": [
       "check-es2015-constants",
       "transform-es2015-arrow-functions",
