@@ -60,6 +60,9 @@ $ npm install
 
 # Run the app
 $ npm start
+
+The api is running at http://127.0.0.1:3000/api/
+Use Postman a client REST to test the API. To access the searches related to the policies you must first request to login to receive the token that authorizes you to perform the queries. The token must be sent in the header.
 ```
 ## License
 Copyright (c) 2018 Christian Yánez García
