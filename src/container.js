@@ -12,27 +12,49 @@ import PolicyRepository from "./infraestructure/persistence/repositories/domain/
 import ClientRepository from "./infraestructure/persistence/repositories/domain/models/client/";
 import ClientAggregate from "./domain/aggregates/client/";
 import PolicyAggregate from "./domain/aggregates/policy/";
+import { GetUserById } from "./application/client/";
+import { GetUserByName } from "./application/client/";
+import { GetUserByPolicyNumber } from "./application/client/";
+import { GetPolicyByUserName } from "./application/policy/";
+
 //Class, Functions and Values of Middleware
 
 const container = createContainer();
 
 // System Class
 container
+	// System API
 	.register({
 		server: asClass(Server).singleton()
 	})
+	// System Repositories
 	.register({
 		PolicyRepository: asClass(PolicyRepository).singleton()
 	})
 	.register({
 		ClientRepository: asClass(ClientRepository).singleton()
 	})
+	// System Aggregates
 	.register({
 		ClientAggregate: asClass(ClientAggregate).singleton()
 	})
 	.register({
 		PolicyAggregate: asClass(PolicyAggregate).singleton()
 	})
+	// System Applications
+	.register({
+		GetUserById: asClass(GetUserById).singleton()
+	})
+	.register({
+		GetUserByName: asClass(GetUserByName).singleton()
+	})
+	.register({
+		GetUserByPolicyNumber: asClass(GetUserByPolicyNumber).singleton()
+	})
+	.register({
+		GetPolicyByUserName: asClass(GetPolicyByUserName).singleton()
+	})
+
 	// System Functions
 	.register({
 		expressApp: asFunction(expressApp).singleton()

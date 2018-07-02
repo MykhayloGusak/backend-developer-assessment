@@ -17,7 +17,7 @@ class ClientAggregate {
 	async getByUsername(name) {
 		try {
 			const clients = await this.ClientRepository.getAll();
-			let result = find(clients, { name: name });
+			const result = find(clients, { name: name });
 			return result;
 		} catch (error) {
 			console.error(error);
@@ -27,8 +27,8 @@ class ClientAggregate {
 	async getById(id) {
 		try {
 			const clients = await this.ClientRepository.getAll();
-			let result = find(clients, { id: id });
-			console.log(result);
+			const result = find(clients, { id: id });
+			return result;
 		} catch (error) {
 			console.error(error);
 		}

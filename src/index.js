@@ -6,7 +6,7 @@ require("babel-register")({
 const container = require("./container");
 
 const server = container.resolve("server");
-const client = container.resolve("PolicyAggregate");
+const client = container.resolve("GetPolicyByUserName");
 
-client.getByClientId("a0ece5db-cd14-4f21-812f-966633e7be86");
+client.get("Britney");
 server.start();
