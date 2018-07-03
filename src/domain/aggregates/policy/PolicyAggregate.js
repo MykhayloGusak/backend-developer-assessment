@@ -1,4 +1,4 @@
-import { find } from "lodash";
+import { filter } from "lodash";
 
 class PolicyAggregate {
 	constructor({ PolicyRepository }) {
@@ -17,7 +17,7 @@ class PolicyAggregate {
 	async getById(id) {
 		try {
 			const policies = await this.PolicyRepository.getAll();
-			const result = find(policies, { id: id });
+			const result = filter(policies, { id: id });
 			return result;
 		} catch (error) {
 			console.error(error);
@@ -27,7 +27,7 @@ class PolicyAggregate {
 	async getByClientId(clientId) {
 		try {
 			const policies = await this.PolicyRepository.getAll();
-			const result = find(policies, { clientId: clientId });
+			const result = filter(policies, { clientId: clientId });
 			return result;
 		} catch (error) {
 			console.error(error);

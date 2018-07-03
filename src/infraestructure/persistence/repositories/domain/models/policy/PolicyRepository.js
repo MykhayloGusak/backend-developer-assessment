@@ -1,9 +1,9 @@
 import axios from "axios";
-import Policy from "../../../../../../domain/models/policy";
 
 class PolicyRepository {
-	constructor({ config }) {
+	constructor({ config, createPolicy }) {
 		this.config = config;
+		this.createPolicy = createPolicy;
 	}
 
 	//If necessary, you can create, update and delete functions. But this is not
@@ -11,17 +11,18 @@ class PolicyRepository {
 
 	async getAll() {
 		try {
+			const self = this;
 			const response = await axios.get(this.config.POLICIES);
 			let policies = [];
 			response.data.policies.forEach(function(value, indice, array) {
-				const policy = new Policy({
-					id: value.id,
-					amountInsured: value.amountInsured,
-					email: value.email,
-					inceptionDate: value.inceptionDate,
-					installmentPayment: value.installmentPayment,
-					clientId: value.clientId
-				});
+				const policy = self.createPolicy(
+					value.id,
+					value.amountInsured,
+					value.email,
+					value.inceptionDate,
+					value.installmentPayment,
+					value.clientId
+				);
 				policies.push(policy.toJSON());
 			});
 			return policies;

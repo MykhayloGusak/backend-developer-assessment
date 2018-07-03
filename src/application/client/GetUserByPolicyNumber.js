@@ -10,7 +10,7 @@ class GetUserByPolicyNumber {
 				policyNumber
 			);
 			const resultClient = await this.ClientAggregate.getById(
-				resultPolicy.clientId
+				resultPolicy[0].clientId
 			);
 			return resultClient;
 		} catch (error) {

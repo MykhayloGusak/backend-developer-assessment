@@ -6,7 +6,9 @@ export default ({ PolicyController }) => {
 	policyRoutes
 		.route("/client/:userName")
 		/** GET /api/policies/client/:userName - Get policies */
-		.get(PolicyController.getPolicyByUserName);
+		.get(async (req, res) => {
+			return await PolicyController.getPolicyByUserName(req, res);
+		});
 
 	return policyRoutes;
 };

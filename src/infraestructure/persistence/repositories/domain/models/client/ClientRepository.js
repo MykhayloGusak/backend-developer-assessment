@@ -1,9 +1,9 @@
 import axios from "axios";
-import Client from "../../../../../../domain/models/client";
 
 class ClientRepository {
-	constructor({ config }) {
+	constructor({ config, createClient }) {
 		this.config = config;
+		this.createClient = createClient;
 	}
 
 	//If necessary, you can create, update and delete functions. But this is not
@@ -11,15 +11,16 @@ class ClientRepository {
 
 	async getAll() {
 		try {
+			const self = this;
 			const response = await axios.get(this.config.CLIENTS);
 			let clients = [];
 			response.data.clients.forEach(function(value, indice, array) {
-				const client = new Client({
-					id: value.id,
-					name: value.name,
-					email: value.email,
-					role: value.role
-				});
+				const client = self.createClient(
+					value.id,
+					value.name,
+					value.email,
+					value.role
+				);
 				clients.push(client.toJSON());
 			});
 			return clients;

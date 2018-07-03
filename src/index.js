@@ -4,7 +4,6 @@ require("babel-register")({
 });
 
 const container = require("./container");
-
-const server = container.resolve("server");
+const server = container.resolve("Server");
 
 server.start();

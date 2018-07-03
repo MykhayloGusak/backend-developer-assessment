@@ -3,13 +3,11 @@ class ClientController {
 		this.GetUserById = GetUserById;
 		this.GetUserByName = GetUserByName;
 		this.GetUserByPolicyNumber = GetUserByPolicyNumber;
-		this.saludo = "Holaaa";
 	}
 
 	async getUserById(req, res) {
-		console.log(this.saludo);
-		//const user = await this.GetUserById.get(req.params.userID);
-		//return res.send(user).json();
+		const user = await this.GetUserById.get(req.params.userID);
+		return res.send(user).json();
 	}
 
 	async getUserByName(req, res) {

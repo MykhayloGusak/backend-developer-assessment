@@ -4,10 +4,8 @@ class PolicyController {
 	}
 
 	async getPolicyByUserName(req, res) {
-		const user = await this.GetPolicyByUserName.prototype.get(
-			req.params.userName
-		);
-		return res.send(user).json();
+		const policy = await this.GetPolicyByUserName.get(req.params.userName);
+		return res.send(policy).json();
 	}
 }
 

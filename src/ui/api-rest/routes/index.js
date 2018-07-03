@@ -4,9 +4,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import methodOverride from "method-override";
 
-export default ({ ClientRoutes, policyRoutes }) => {
+export default ({ clientRoutes, policyRoutes }) => {
 	const router = Router();
-
 	router
 		.use(methodOverride("X-HTTP-Method-Override"))
 		.use(cors())
@@ -21,7 +20,7 @@ export default ({ ClientRoutes, policyRoutes }) => {
 	);
 
 	// Mount routes
-	router.use("/clients", ClientRoutes.get);
-	//router.use("/policies", policyRoutes());
+	router.use("/clients", clientRoutes);
+	router.use("/policies", policyRoutes);
 	return router;
 };
