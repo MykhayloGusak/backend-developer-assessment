@@ -28,7 +28,7 @@ As our stakeholders are very fussy, here you have some tips:
 ## Preparation details
 
 ### Class Diagram
-![Class Diagram](/Documents/Diagrams/Architecture%20Class%20Diagram.png "Class Diagram")
+![Class Diagram](/documents/diagrams/Architecture%20Class%20Diagram.png "Class Diagram")
 
 ## Solution Details 
 - The responsibilities have been broken down into layers.
@@ -190,21 +190,21 @@ Through this resource you can obtain the policies related to a customer name. Fo
 ## Example using postman:
 
 ### Request - Signin
-![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client.png "Example request of Signing with Postman")
+![Postman - Signin](/documents/postmant%20Tutorial/1-Signin_Client.png "Example request of Signing with Postman")
 
 ### Output - Signin  Request
-![Postman - Signin Request](/Documents/Postmant%20Tutorial/1-Signin_Client_Result.png "Example output of Signing with Postman")
+![Postman - Signin Request](/documents/dostmant%20Tutorial/1-Signin_Client_Result.png "Example output of Signing with Postman")
 
 ------
 
 ### Request/Output - Get Policy By Client Name - Without Authorization
-![Postman - Get Policy By Client Name - Without Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Fail.png "Example Get Policy By Client Name - Without Authorization")
+![Postman - Get Policy By Client Name - Without Authorization](/documents/postmant%20Tutorial/2-Get_Policy_By_Client_Fail.png "Example Get Policy By Client Name - Without Authorization")
 
 ### Request - Get Policy By Client Name - With Authorization
-![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client.png "Example Request - Get Policy By Client Name - With Authorization")
+![Postman - Get Policy By Client Name - With Authorization](/documents/postmant%20Tutorial/2-Get_Policy_By_Client.png "Example Request - Get Policy By Client Name - With Authorization")
 
 ### Output - Get Policy By Client Name - With Authorization Request
-![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Result.png "Example  Output - Get Policy By Client Name - With Authorization")
+![Postman - Get Policy By Client Name - With Authorization](/documents/postmant%20Tutorial/2-Get_Policy_By_Client_Result.png "Example  Output - Get Policy By Client Name - With Authorization")
 
 
 ## License
