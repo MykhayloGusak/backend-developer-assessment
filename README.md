@@ -71,7 +71,7 @@ $ npm test
 ## API Documentation 
 - **POST: /api/clients/signin - Sign User**  
 
-The variable body (req.body) is sent in json format with the necessary data for customer identification, for example:
+The variable body (req.body) is sent in json format with the necessary data for Client identification, for example:
 ```json
   {
   	"username":"Britney",
@@ -99,7 +99,7 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
 
 - **GET: /api/clients/id/:userId - Get user**
 
-Through this resource you can obtain the data related to a customer's identifier . For example:
+Through this resource you can obtain the data related to a Client identifier . For example:
 
   ```json
   http://127.0.0.1:3000/api/clients/id/31cdee85-d0d1-43c1-9d87-9390dc4c445d 
@@ -117,7 +117,7 @@ Through this resource you can obtain the data related to a customer's identifier
 
 - **GET: /api/clients/username/:userName - Get user**
 
-Through this resource you can obtain the data related to a customer's name. For example:
+Through this resource you can obtain the data related to a Client name. For example:
 
   ```json
   Request:
@@ -136,7 +136,7 @@ Through this resource you can obtain the data related to a customer's name. For 
 
 - **GET: /api/clients/policy/:policyID - Get user**
 
-Through this resource you can obtain the Client's policy number. For example:
+Through this resource you can obtain the Client policy number. For example:
 
   ```json
   Request:
@@ -155,7 +155,7 @@ Through this resource you can obtain the Client's policy number. For example:
 
 - **GET: /api/policies/client/:userName - Get policies**
 
-Through this resource you can obtain the policies related to a customer name. For example:
+Through this resource you can obtain the policies related to a Client name. For example:
 
   ```json
   Request:
