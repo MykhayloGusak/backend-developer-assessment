@@ -1,3 +1,4 @@
+// Client Controller
 class ClientController {
 	constructor({ GetUserById, GetUserByName, GetUserByPolicyNumber, Signin }) {
 		this.GetUserById = GetUserById;
@@ -5,7 +6,7 @@ class ClientController {
 		this.GetUserByPolicyNumber = GetUserByPolicyNumber;
 		this.Signin = Signin;
 	}
-
+	// Processes related to clients querys
 	async getUserById(req, res) {
 		const user = await this.GetUserById.get(req.params.userID);
 		return res.send(user).json();
@@ -21,6 +22,7 @@ class ClientController {
 		return res.send(user).json();
 	}
 
+	// Process that initiates Authentication
 	async signin(req, res) {
 		const resultSignin = await this.Signin.loginFlow(
 			req.body.username,
@@ -41,6 +43,7 @@ class ClientController {
 		}
 	}
 
+	// Check authorization
 	loginRequired(req, res, next) {
 		if (req.user) {
 			next();
@@ -51,7 +54,7 @@ class ClientController {
 			});
 		}
 	}
-
+	// Check authorization
 	roleAdminCheck(req, res, next) {
 		if (req.role === "admin") {
 			next();

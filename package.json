@@ -4,28 +4,28 @@
   "description": "Assessment skill backend developer",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 nodemon --exec babel-node src/index.js",
-    "dev": "cross-env NODE_ENV=development NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 nodemon --exec babel-node src/index.js",
+    "start":
+      "cross-env NODE_ENV=production NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 babel-node src/index.js",
+    "dev":
+      "cross-env NODE_ENV=development NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 nodemon --exec babel-node src/index.js",
     "babel-node": "babel-node",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test":
+      "cross-env NODE_ENV=testing NODE_PATH=. SECRETSTRING=nodeauthsecret PORT=3000 jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zergote/backend-developer-assessment.git"
   },
-  "keywords": [
-    "api",
-    "rest",
-    "ddd",
-    "onion",
-    "architecture"
-  ],
+  "keywords": ["api", "rest", "ddd", "onion", "architecture"],
   "author": "Christian Yánez",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zergote/backend-developer-assessment/issues"
   },
   "homepage": "https://github.com/zergote/backend-developer-assessment#readme",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-check-es2015-constants": "^6.22.0",
@@ -71,9 +71,7 @@
     "winston": "^2.4.3"
   },
   "babel": {
-    "presets": [
-      "stage-0"
-    ],
+    "presets": ["stage-0"],
     "plugins": [
       "check-es2015-constants",
       "transform-es2015-arrow-functions",

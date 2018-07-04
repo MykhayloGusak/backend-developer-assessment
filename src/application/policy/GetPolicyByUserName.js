@@ -1,3 +1,6 @@
+// The applications are the cases of use in which different
+// consultation processes and other logical processes are
+// carried out to give a response to the request.
 class GetPolicyByUserName {
 	constructor({ ClientAggregate, PolicyAggregate }) {
 		this.ClientAggregate = ClientAggregate;

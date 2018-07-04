@@ -1,3 +1,4 @@
+// From here you start the api express server and any other service related to API.
 export default class Server {
   constructor({ config, expressApp }) {
     this.config = config;

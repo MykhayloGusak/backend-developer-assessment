@@ -1,5 +1,7 @@
+// Services are processes that orchestrate processes
+// belonging to several use cases, so they cannot be
+// catalogued within a single one.
 import jwt from "jsonwebtoken";
-
 class Signin {
 	constructor({ config, GetUserByName }) {
 		this.config = config;
@@ -27,7 +29,6 @@ class Signin {
 						expiresIn: "1h"
 					}
 				);
-				console.log(username + " has been correctly identified");
 				return {
 					process: true,
 					message: username + " has been correctly identified",

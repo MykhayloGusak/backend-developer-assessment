@@ -1,3 +1,6 @@
+// The aggregates are a root element that allow access to
+// a collection and manage it. From here you can search,
+// filter, add, modify and remove items from the collection.
 import { filter } from "lodash";
 
 class PolicyAggregate {

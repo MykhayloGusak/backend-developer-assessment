@@ -1,5 +1,6 @@
-//When connecting to adatabase manager you can use the utilities to create models.
-//ORM can be sequelize or objection.js
+// When connecting to adatabase manager you can use the utilities to create models.
+// ORM can be sequelize or objection.js. The models also allow to check the data
+// with which they are created to avoid type errors
 class Policy {
 	constructor(
 		id,

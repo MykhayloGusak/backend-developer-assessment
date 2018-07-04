@@ -1,10 +1,5 @@
-require("babel-register")({
-	//stage: 0 // for es7 features
-	presets: ["stage-0"]
-});
-
+// The Awilix container is imported, the Server class is located and the server is run.
 const container = require("./container");
 const server = container.resolve("Server");
-const signin = container.resolve("Signin");
-//signin.loginFlow("Britney");
+
 server.start();

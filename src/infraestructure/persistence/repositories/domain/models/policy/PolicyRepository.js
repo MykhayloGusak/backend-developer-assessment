@@ -1,3 +1,4 @@
+// Repositories handle the logic of database connection and queries
 import axios from "axios";
 
 class PolicyRepository {

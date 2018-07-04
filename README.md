@@ -60,6 +60,12 @@ $ npm start
 # related to the policies you must first request to login to receive 
 # the token that authorizes you to perform the queries. The token 
 # must be sent in the header.
+
+# Run test
+$ npm test
+
+# The integration tests of the API Rest have been added.
+# Unit tests policy only have been added.
 ```
 
 ## API Documentation 
