@@ -11,11 +11,10 @@ class PolicyRepository {
 
 	async getAll() {
 		try {
-			const self = this;
 			const response = await axios.get(this.config.POLICIES);
 			let policies = [];
 			response.data.policies.forEach(function(value, indice, array) {
-				const policy = self.createPolicy(
+				const policy = this.createPolicy(
 					value.id,
 					value.amountInsured,
 					value.email,
@@ -24,7 +23,7 @@ class PolicyRepository {
 					value.clientId
 				);
 				policies.push(policy.toJSON());
-			});
+			}, this);
 			return policies;
 		} catch (error) {
 			console.error(error);

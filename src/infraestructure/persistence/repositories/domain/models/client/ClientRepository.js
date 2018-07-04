@@ -11,18 +11,17 @@ class ClientRepository {
 
 	async getAll() {
 		try {
-			const self = this;
 			const response = await axios.get(this.config.CLIENTS);
 			let clients = [];
 			response.data.clients.forEach(function(value, indice, array) {
-				const client = self.createClient(
+				const client = this.createClient(
 					value.id,
 					value.name,
 					value.email,
 					value.role
 				);
 				clients.push(client.toJSON());
-			});
+			}, this);
 			return clients;
 		} catch (error) {
 			console.error(error);
