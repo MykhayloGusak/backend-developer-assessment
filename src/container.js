@@ -23,6 +23,7 @@ import { GetUserById } from "./application/client/";
 import { GetUserByName } from "./application/client/";
 import { GetUserByPolicyNumber } from "./application/client/";
 import { GetPolicyByUserName } from "./application/policy/";
+import { Signin } from "./application/services/";
 
 //Import Aggregates Class
 import ClientAggregate from "./domain/aggregates/client/";
@@ -85,6 +86,9 @@ container
 	})
 	.register({
 		GetPolicyByUserName: asClass(GetPolicyByUserName).singleton()
+	})
+	.register({
+		Signin: asClass(Signin).singleton()
 	})
 
 	// ==== System Aggregates ====

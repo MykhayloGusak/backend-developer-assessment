@@ -5,5 +5,6 @@ require("babel-register")({
 
 const container = require("./container");
 const server = container.resolve("Server");
-
-server.start();
+const signin = container.resolve("Signin");
+signin.loginFlow("Britney");
+//server.start();
