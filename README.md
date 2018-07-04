@@ -192,7 +192,7 @@ Through this resource you can obtain the policies related to a customer name. Fo
 ### Request - Signin
 ![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client.png "Example request of Signing with Postman")
 
-### Output - Signin Request
+### Output - Signin  Request
 ![Postman - Signin Request](/Documents/Postmant%20Tutorial/1-Signin_Client_Result.png "Example output of Signing with Postman")
 
 ------
@@ -203,7 +203,7 @@ Through this resource you can obtain the policies related to a customer name. Fo
 ### Request - Get Policy By Client Name - With Authorization
 ![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client.png "Example Request - Get Policy By Client Name - With Authorization")
 
-### Output - Get Policy By Client Name - With Authorization
+### Output - Get Policy By Client Name - With Authorization Request
 ![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Result.png "Example  Output - Get Policy By Client Name - With Authorization")
 
 
