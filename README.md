@@ -65,15 +65,16 @@ $ npm start
 ## API Documentation 
 - **<POST> /api/clients/signin - Sign User**  
 
-  The variable body (req.body) is sent in json format with the necessary data for customer identification, for example:
+The variable body (req.body) is sent in json format with the necessary data for customer identification, for example:
 ```json
   {
-     // The database does not provide a password, so it is left empty
+     // 
   	"username":"Britney",
   	"password": ""
   }
 ```
-  If the data is correct, you must receive the confirmation of identification and the token to authorize the queries:
+The database does not provide a password, so it is left empty. If the data is correct, you must receive the confirmation of identification and the token to authorize the queries:
+
 ```json
   {
       "process": true,
@@ -87,14 +88,13 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
 
   ```json
   headers: {
-              // key value pair of headers
               "Authorization": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEwZWNlNWRiLWNkMTQtNGYyMS04MTJmLTk2NjYzM2U3YmU4NiIsIm5hbWUiOiJCcml0bmV5IiwiZW1haWwiOiJicml0bmV5YmxhbmtlbnNoaXBAcXVvdGV6YXJ0LmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUzMDcwMDIyNiwiZXhwIjoxNTMwNzAzODI2fQ.2tOK460eDVW5jC1ELaRduq-b3FbBDwsWFce2e0sfrV0"
         },
   ```
 
 - **<GET> /api/clients/id/:userId - Get user**
 
-  Through this resource you can obtain the data related to a customer's identifier . For example:
+Through this resource you can obtain the data related to a customer's identifier . For example:
 
   ```json
   http://127.0.0.1:3000/api/clients/id/31cdee85-d0d1-43c1-9d87-9390dc4c445d 
@@ -110,9 +110,9 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
 
   
 
-- **<GET> /api/clients/username/:userName - Get user
+- **<GET> /api/clients/username/:userName - Get user**
 
-  Through this resource you can obtain the data related to a customer's name. For example:
+Through this resource you can obtain the data related to a customer's name. For example:
 
   ```json
   Request:
@@ -130,6 +130,9 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
   ```
 
 - **<GET> /api/clients/policy/:policyID - Get user**
+
+Through this resource you can obtain the Client's policy number. For example:
+
   ```json
   Request:
   http://127.0.0.1:3000/api/clients/policy/dde33fe3-b04c-4d4b-994f-c823e4908be5
@@ -146,6 +149,9 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
   ```
 
 - **<GET> /api/policies/client/:userName - Get policies**
+
+Through this resource you can obtain the policies related to a customer name. For example:
+
   ```json
   Request:
   http://127.0.0.1:3000/api/policies/client/Manning
@@ -188,7 +194,7 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
 ![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client.png "Example request of Signing with Postman")
 
 ### Output - Signin Request
-![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client_Result.png "Example output of Signing with Postman")
+![Postman - Signin Request](/Documents/Postmant%20Tutorial/1-Signin_Client_Result.png "Example output of Signing with Postman")
 
 ------
 
@@ -196,10 +202,10 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
 ![Postman - Get Policy By Client Name - Without Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Fail.png "Example Get Policy By Client Name - Without Authorization")
 
 ### Request - Get Policy By Client Name - With Authorization
-![Postman - Get Policy By Client Name](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client.png" Example Request - Get Policy By Client Name - With Authorization")
+![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client.png" Example Request - Get Policy By Client Name - With Authorization")
 
 ### Output - Get Policy By Client Name - With Authorization
-![Postman - Signin](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Result.png"Example  Output - Get Policy By Client Name - With Authorization")
+![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Result.png"Example  Output - Get Policy By Client Name - With Authorization")
 
 
 ## License
