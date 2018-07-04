@@ -1,7 +1,5 @@
 # Backend API REST for Insurance Company (Assessment)
 
-
-
 ## Statement
 
 As an insurance company we've been asked to develop an application that manages some information about our insurance policies and company clients. To do that, we have two services that provide all the data we need:
@@ -34,13 +32,14 @@ As our stakeholders are very fussy, here you have some tips:
 
 ## Solution Details 
 - The responsibilities have been broken down into layers.
-- DDD and the construction patterns of the onion architecture have been used.
-- The dependency inversion has been applied to decouple components.
+- [Domain-driven design (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design) and the construction patterns of the [Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/) have been used.
+- The injection of dependencies and inversion of control has been applied to decouple components. The [Awilix](https://github.com/jeffijoe/awilix) library has been used for this purpose.
 - The system is easy to modify, update and scale thanks to its structure. It has the structure for a business application.
 - Code is well documented and fully commented.
 - For the authentication the user name has been used, the password has been left blank since they are not provided.
 - For authorization JSON WEB TOKENS is used instead of cookies.
-- The api uses parameters instead of queries (can be modified to suit the desired solution)
+- The api uses parameters instead of queries (can be modified to suit the desired solution).
+- Minimum number of dependencies used.
 
 ## How to Use
 ```bash
@@ -92,26 +91,6 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
               "Authorization": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEwZWNlNWRiLWNkMTQtNGYyMS04MTJmLTk2NjYzM2U3YmU4NiIsIm5hbWUiOiJCcml0bmV5IiwiZW1haWwiOiJicml0bmV5YmxhbmtlbnNoaXBAcXVvdGV6YXJ0LmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUzMDcwMDIyNiwiZXhwIjoxNTMwNzAzODI2fQ.2tOK460eDVW5jC1ELaRduq-b3FbBDwsWFce2e0sfrV0"
         },
   ```
-
-**Example using postman:**
-
-(Request - Signin)![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client.png "Example request of Signing with Postman")
-
-(Output - Signin Request)![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client_Result.png "Example output of Signing with Postman")
-
-------
-
-(Request/Output - Get Policy By Client Name - Without Authorization)
-
-![Postman - Signin](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Fail.png "Example output of Signing with Postman")
-
-(Request - Get Policy By Client Name - With Authorization)
-
-![Postman - Get Policy By Client Name](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client.png"Example request Get Policy By Client Name")
-
-(Output - Get Policy By Client Name - With Authorization)
-
-![Postman - Signin](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Result.png"Example output of Signing with Postman")
 
 - **<GET> /api/clients/id/:userId - Get user**
 
@@ -203,7 +182,28 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
   ]
   ```
 
+## Example using postman:
+
+### Request - Signin
+![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client.png "Example request of Signing with Postman")
+
+### Output - Signin Request
+![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client_Result.png "Example output of Signing with Postman")
+
+------
+
+### Request/Output - Get Policy By Client Name - Without Authorization
+![Postman - Get Policy By Client Name - Without Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Fail.png "Example Get Policy By Client Name - Without Authorization")
+
+### Request - Get Policy By Client Name - With Authorization
+![Postman - Get Policy By Client Name](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client.png" Example Request - Get Policy By Client Name - With Authorization")
+
+### Output - Get Policy By Client Name - With Authorization
+![Postman - Signin](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Result.png"Example  Output - Get Policy By Client Name - With Authorization")
+
+
 ## License
+
 Copyright (c) 2018 Christian Yánez García
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
