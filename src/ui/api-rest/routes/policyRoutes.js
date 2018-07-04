@@ -1,14 +1,18 @@
 import express from "express";
 
-export default ({ PolicyController }) => {
+export default ({ PolicyController, ClientController }) => {
 	const policyRoutes = express.Router();
 
 	policyRoutes
 		.route("/client/:userName")
 		/** GET /api/policies/client/:userName - Get policies */
-		.get(async (req, res) => {
-			return await PolicyController.getPolicyByUserName(req, res);
-		});
+		.get(
+			ClientController.loginRequired,
+			ClientController.roleAdminCheck,
+			async (req, res) => {
+				return await PolicyController.getPolicyByUserName(req, res);
+			}
+		);
 
 	return policyRoutes;
 };

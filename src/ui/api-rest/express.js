@@ -16,7 +16,10 @@ export default ({ config, router }) => {
 				config.SECRETSTRING,
 				function(err, decode) {
 					if (err) req.user = undefined;
-					req.user = decode;
+					else {
+						req.user = decode.name;
+						req.role = decode.role;
+					}
 					next();
 				}
 			);
