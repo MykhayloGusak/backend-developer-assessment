@@ -63,7 +63,7 @@ $ npm start
 ```
 
 ## API Documentation 
-- **<POST> /api/clients/signin - Sign User**  
+- **POST: /api/clients/signin - Sign User**  
 
 The variable body (req.body) is sent in json format with the necessary data for customer identification, for example:
 ```json
@@ -91,7 +91,7 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
         },
   ```
 
-- **<GET> /api/clients/id/:userId - Get user**
+- **GET: /api/clients/id/:userId - Get user**
 
 Through this resource you can obtain the data related to a customer's identifier . For example:
 
@@ -109,7 +109,7 @@ Through this resource you can obtain the data related to a customer's identifier
 
   
 
-- **<GET> /api/clients/username/:userName - Get user**
+- **GET: /api/clients/username/:userName - Get user**
 
 Through this resource you can obtain the data related to a customer's name. For example:
 
@@ -128,7 +128,7 @@ Through this resource you can obtain the data related to a customer's name. For 
   ]
   ```
 
-- **<GET> /api/clients/policy/:policyID - Get user**
+- **GET: /api/clients/policy/:policyID - Get user**
 
 Through this resource you can obtain the Client's policy number. For example:
 
@@ -147,7 +147,7 @@ Through this resource you can obtain the Client's policy number. For example:
   ]
   ```
 
-- **<GET> /api/policies/client/:userName - Get policies**
+- **GET: /api/policies/client/:userName - Get policies**
 
 Through this resource you can obtain the policies related to a customer name. For example:
 
