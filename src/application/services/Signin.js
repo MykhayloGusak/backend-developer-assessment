@@ -1,5 +1,8 @@
+import jwt from "jsonwebtoken";
+
 class Signin {
-	constructor({ GetUserByName }) {
+	constructor({ config, GetUserByName }) {
+		this.config = config;
 		this.GetUserByName = GetUserByName;
 	}
 
@@ -9,14 +12,40 @@ class Signin {
 			//User does not have the password property but leaves the check ready for future modification
 			//Change undefined to password
 			if (userResult[0].password === undefined) {
-				console.log(username + " is logged");
+				//Build token data
+				const dataPayload = {
+					id: userResult[0].id,
+					name: userResult[0].name,
+					email: userResult[0].email,
+					role: userResult[0].role
+				};
+				//Generate token
+				const generateToken = jwt.sign(
+					dataPayload,
+					this.config.SECRETSTRING,
+					{
+						expiresIn: "1h"
+					}
+				);
+				console.log(username + " has been correctly identified");
+				return {
+					process: true,
+					message: username + " has been correctly identified",
+					token: generateToken
+				};
 			} else {
 				console.log("Incorrect password");
-				return { message: "Incorrect password" };
+				return {
+					process: false,
+					message: "Incorrect password"
+				};
 			}
 		} else {
 			console.log("Unregistered username");
-			return { message: "Unregistered username" };
+			return {
+				process: false,
+				message: "Unregistered username"
+			};
 		}
 	}
 }

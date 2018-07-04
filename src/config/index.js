@@ -7,10 +7,10 @@ const clients = envConfig.database.clients;
 const policies = envConfig.database.policies;
 
 // Secrect String to encrypt JSON WEB TOKENS
-let secretString = envConfig.auth.secretString;
+const secretString = envConfig.auth.secretString;
 
 //Port to expose the API REST
-let port = envConfig.server.port;
+const port = envConfig.server.port;
 
 const config = {
 	[ENV]: true,
