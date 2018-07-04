@@ -68,7 +68,6 @@ $ npm start
 The variable body (req.body) is sent in json format with the necessary data for customer identification, for example:
 ```json
   {
-     // 
   	"username":"Britney",
   	"password": ""
   }
@@ -202,10 +201,10 @@ Through this resource you can obtain the policies related to a customer name. Fo
 ![Postman - Get Policy By Client Name - Without Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Fail.png "Example Get Policy By Client Name - Without Authorization")
 
 ### Request - Get Policy By Client Name - With Authorization
-![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client.png" Example Request - Get Policy By Client Name - With Authorization")
+![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client.png "Example Request - Get Policy By Client Name - With Authorization")
 
 ### Output - Get Policy By Client Name - With Authorization
-![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Result.png"Example  Output - Get Policy By Client Name - With Authorization")
+![Postman - Get Policy By Client Name - With Authorization](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Result.png "Example  Output - Get Policy By Client Name - With Authorization")
 
 
 ## License
