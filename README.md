@@ -102,15 +102,18 @@ The token has a time of 1 hour. A new token must be created when it expires. To 
 Through this resource you can obtain the data related to a Client identifier . For example:
 
   ```json
-  http://127.0.0.1:3000/api/clients/id/31cdee85-d0d1-43c1-9d87-9390dc4c445d 
-  [
-      {
-          "id": "31cdee85-d0d1-43c1-9d87-9390dc4c445d",
-          "name": "Morris",
-          "email": "morrisblankenship@quotezart.com",
-          "role": "admin"
-      }
-  ]
+Request:  
+http://127.0.0.1:3000/api/clients/id/31cdee85-d0d1-43c1-9d87-9390dc4c445d
+
+Output:
+[
+     {
+         "id": "31cdee85-d0d1-43c1-9d87-9390dc4c445d",
+         "name": "Morris",
+         "email": "morrisblankenship@quotezart.com",
+         "role": "admin"
+    }
+]
   ```
 
   
