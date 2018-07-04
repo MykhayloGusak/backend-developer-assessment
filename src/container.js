@@ -1,6 +1,5 @@
 //Libraries for the creation of a container for the investment of dependencies
 import { createContainer, asClass, asFunction, asValue } from "awilix";
-import { scopePerRequest } from "awilix-express";
 
 //Values of the system configuration
 import { config } from "./config/index";

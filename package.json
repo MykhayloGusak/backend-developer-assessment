@@ -59,16 +59,16 @@
   },
   "dependencies": {
     "awilix": "^3.0.8",
-    "awilix-express": "^1.1.0",
     "axios": "^0.18.0",
     "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "express-status-monitor": "^1.1.4",
+    "express-winston": "^2.5.1",
     "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.10",
-    "method-override": "^2.3.10"
+    "method-override": "^2.3.10",
+    "winston": "^2.4.3"
   },
   "babel": {
     "presets": [

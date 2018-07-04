@@ -1,5 +1,7 @@
 # Backend API REST for Insurance Company (Assessment)
 
+
+
 ## Statement
 
 As an insurance company we've been asked to develop an application that manages some information about our insurance policies and company clients. To do that, we have two services that provide all the data we need:
@@ -28,7 +30,7 @@ As our stakeholders are very fussy, here you have some tips:
 ## Preparation details
 
 ### Class Diagram
-![Class Diagram](https://github.com/zergote/backend-developer-assessment/blob/master/Documents/Architecture%20Class%20Diagram.png "Class Diagram")
+![Class Diagram](/Documents/Diagrams/Architecture%20Class%20Diagram.png "Class Diagram")
 
 ## Solution Details 
 - The responsibilities have been broken down into layers.
@@ -40,15 +42,8 @@ As our stakeholders are very fussy, here you have some tips:
 - For authorization JSON WEB TOKENS is used instead of cookies.
 - The api uses parameters instead of queries (can be modified to suit the desired solution)
 
-## API Documentation (in progress)
-- /** POST /api/clients/signin - Sign User */
-- /** GET /api/clients/id/:userId - Get user */
-- /** GET /api/clients/user/:userName - Get user */
-- /** GET /api/clients/policy/:policyID - Get user */
-- /** GET /api/policies/client/:userName - Get policies */ 
-     
 ## How to Use
-```
+```bash
 # Clone this repository
 $ git clone https://github.com/zergote/DIPCHARTS-Front-end-Web-APP
 
@@ -61,12 +56,153 @@ $ npm install
 # Run the app
 $ npm start
 
-The api is running at http://127.0.0.1:3000/api/
-Use Postman a client REST to test the API. To access the searches 
-related to the policies you must first request to login to receive 
-the token that authorizes you to perform the queries. The token 
-must be sent in the header.
+# The api is running at http://127.0.0.1:3000/api/
+# Use Postman a client REST to test the API. To access the searches 
+# related to the policies you must first request to login to receive 
+# the token that authorizes you to perform the queries. The token 
+# must be sent in the header.
 ```
+
+## API Documentation 
+- **<POST> /api/clients/signin - Sign User**  
+
+  The variable body (req.body) is sent in json format with the necessary data for customer identification, for example:
+```json
+  {
+     // The database does not provide a password, so it is left empty
+  	"username":"Britney",
+  	"password": ""
+  }
+```
+  If the data is correct, you must receive the confirmation of identification and the token to authorize the queries:
+```json
+  {
+      "process": true,
+      "message": "Britney has been correctly identified",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEwZWNlNWRiLWNkMTQtNGYyMS04MTJmLTk2NjYzM2U3YmU4NiIsIm5hbWUiOiJCcml0bmV5IiwiZW1haWwiOiJicml0bmV5YmxhbmtlbnNoaXBAcXVvdGV6YXJ0LmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUzMDcwMDIyNiwiZXhwIjoxNTMwNzAzODI2fQ.2tOK460eDVW5jC1ELaRduq-b3FbBDwsWFce2e0sfrV0"
+  }
+```
+
+
+The token has a time of 1 hour. A new token must be created when it expires. To perform the following queries you need to use the received token and send it to the header using the variable authorization by prefixing it with the word JWT and leaving a space for the token to be placed:
+
+  ```json
+  headers: {
+              // key value pair of headers
+              "Authorization": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEwZWNlNWRiLWNkMTQtNGYyMS04MTJmLTk2NjYzM2U3YmU4NiIsIm5hbWUiOiJCcml0bmV5IiwiZW1haWwiOiJicml0bmV5YmxhbmtlbnNoaXBAcXVvdGV6YXJ0LmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUzMDcwMDIyNiwiZXhwIjoxNTMwNzAzODI2fQ.2tOK460eDVW5jC1ELaRduq-b3FbBDwsWFce2e0sfrV0"
+        },
+  ```
+
+**Example using postman:**
+
+(Request - Signin)![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client.png "Example request of Signing with Postman")
+
+(Output - Signin Request)![Postman - Signin](/Documents/Postmant%20Tutorial/1-Signin_Client_Result.png "Example output of Signing with Postman")
+
+------
+
+(Request/Output - Get Policy By Client Name - Without Authorization)
+
+![Postman - Signin](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Fail.png "Example output of Signing with Postman")
+
+(Request - Get Policy By Client Name - With Authorization)
+
+![Postman - Get Policy By Client Name](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client.png"Example request Get Policy By Client Name")
+
+(Output - Get Policy By Client Name - With Authorization)
+
+![Postman - Signin](/Documents/Postmant%20Tutorial/2-Get_Policy_By_Client_Result.png"Example output of Signing with Postman")
+
+- **<GET> /api/clients/id/:userId - Get user**
+
+  Through this resource you can obtain the data related to a customer's identifier . For example:
+
+  ```json
+  http://127.0.0.1:3000/api/clients/id/31cdee85-d0d1-43c1-9d87-9390dc4c445d 
+  [
+      {
+          "id": "31cdee85-d0d1-43c1-9d87-9390dc4c445d",
+          "name": "Morris",
+          "email": "morrisblankenship@quotezart.com",
+          "role": "admin"
+      }
+  ]
+  ```
+
+  
+
+- **<GET> /api/clients/username/:userName - Get user
+
+  Through this resource you can obtain the data related to a customer's name. For example:
+
+  ```json
+  Request:
+  http://127.0.0.1:3000/api/clients/username/Lamb
+  
+  Output:
+  [
+      {
+          "id": "a74c83c5-e271-4ecf-a429-d47af952cfd4",
+          "name": "Lamb",
+          "email": "lambblankenship@quotezart.com",
+          "role": "user"
+      }
+  ]
+  ```
+
+- **<GET> /api/clients/policy/:policyID - Get user**
+  ```json
+  Request:
+  http://127.0.0.1:3000/api/clients/policy/dde33fe3-b04c-4d4b-994f-c823e4908be5
+  
+  Output:
+  [
+      {
+          "id": "e8fd159b-57c4-4d36-9bd7-a59ca13057bb",
+          "name": "Manning",
+          "email": "manningblankenship@quotezart.com",
+          "role": "admin"
+      }
+  ]
+  ```
+
+- **<GET> /api/policies/client/:userName - Get policies**
+  ```json
+  Request:
+  http://127.0.0.1:3000/api/policies/client/Manning
+  
+  Output:
+  [
+      {
+          "id": "64cceef9-3a01-49ae-a23b-3761b604800b",
+          "amountInsured": 1825.89,
+          "email": "inesblankenship@quotezart.com",
+          "inceptionDate": "2016-06-01T03:33:32Z",
+          "installmentPayment": true,
+          "clientId": "e8fd159b-57c4-4d36-9bd7-a59ca13057bb"
+      },
+      {
+          "id": "56b415d6-53ee-4481-994f-4bffa47b5239",
+          "amountInsured": 2301.98,
+          "email": "inesblankenship@quotezart.com",
+          "inceptionDate": "2014-12-01T05:53:13Z",
+          "installmentPayment": false,
+          "clientId": "e8fd159b-57c4-4d36-9bd7-a59ca13057bb"
+      },
+      .
+      .
+      .
+      {
+          "id": "facd2c78-65f0-4a49-8a66-560109d263bc",
+          "amountInsured": 795.83,
+          "email": "inesblankenship@quotezart.com",
+          "inceptionDate": "2014-10-18T07:12:05Z",
+          "installmentPayment": true,
+          "clientId": "e8fd159b-57c4-4d36-9bd7-a59ca13057bb"
+      }
+  ]
+  ```
+
 ## License
 Copyright (c) 2018 Christian Yánez García
 
